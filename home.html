@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENT ORGANISER</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <style>
+        body {
+            /* background-image: url(https://images.unsplash.com/photo-1473396413399-6717ef7c4093?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80); */
+            background-size:100%;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to right,white, pink);
+    
+        
+        
+        }
+        
+        .navbar{
+            /* background-color: brown; */
+            border-radius: 10px;
+            margin: auto;
+            /* opacity: 0.1%; */
+        }
+        .navbar ul{
+            overflow: auto;
+        }
+        .navbar li{
+            float: left;
+            list-style: none;
+            margin: 3px;
+            padding: 3px;
+            text-decoration: none;
+            font-family: 'Signika Negative', sans-serif;
+        }
+        .navbar a{
+            text-decoration: none;
+            color: black;
+            font-size: 30px;
+        }
+        .navbar input{
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 3px;
+            /* color: #3d35d0; */
+        }
+        .search{
+            float: right;
+            /* padding: 2px; */
+            background:black;
+            align-items: center;
+            border-radius: 20px;
+            height: 30px;
+        
+            /* padding: 10px 20px; */
+        }
+        /* .button{
+            width: 5%;
+            background: #2196F3;
+            height: 18px;
+            float: right;
+            margin :5px ;
+            background-image: url();
+        } */
+        .navbar a:hover{
+            background-color:pink;
+            border-radius: 10px;
+        }
+        .search input{
+            background: transparent;
+            flex: 1;
+            border: 0;
+            outline: none;
+            /* padding: 24px; */
+            color: white;
+            text-align: center;
+            
+        }
+        .search button img{
+            width: 20px;
+        }
+        .search button{
+            border: 0;
+            border-radius: 75%;
+            width: 20px;
+            height: 20px;
+            background: #b54040;
+        }
+        .navbar button:hover{
+            cursor: pointer;
+        }
+        ::placeholder{
+            color: white;
+        }
+        .event div a img{
+            opacity:0.7;
+            border-radius:100px ;
+        }
+        /* .event a:hover{
+            opacity: 0.6px;
+        } */
+
+        .event div a img:hover{
+            opacity: 1;
+        }
+        .first{
+            color: black;
+            font-size: 25px;
+            font-family: 'Lobster', cursive;
+        }
+        .ani a img{
+            position: relative;
+            animation-name: rj;
+            animation-duration: 5s;
+            animation-iteration-count: 1;
+            transition: all 0.5s ease-in-out ;
+            
+        }
+        @keyframes rj {
+            0%{
+                top:20px;
+                bottom:0px;
+        }
+            25%{
+                top:0px;
+                bottom: 70px;
+            }
+            /* 50%{
+                top: 40px;
+            }
+            75%{top: 40px;
+
+            }
+            100%{
+                top:40px; */
+            }
+            
+            
+            .ani a img:hover{
+                height: 320px;
+                width: 320px;
+            }
+            .slider{
+                width: 950px;
+                height: 431px;
+                border-radius: 100px;
+                overflow: hidden;
+                margin-left: 272px;
+                margin-top: 40px;
+            }
+            .slides{
+                width: 1920px;
+                height: 1280px;
+                display: flex;
+            }
+            .slides input{
+                display: none;
+            }
+            .slide{
+                width: 50%;
+                height: 600px;
+                transition: 2s;
+            }
+            .slide img{
+                width: 1000px;
+                height: 460px;
+            }
+            /* css for manual slide */
+            .navigation-manual{
+                position: absolute;
+                width: 800px;
+                margin-top: 412px;
+                margin-left: 51px;
+                display: flex;
+                justify-content: center;
+
+            }
+            .manual-btn{
+                border: 2px solid white;
+                padding: 5px;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: 1s;
+            }
+            .manual-btn:not(:last-child){
+                margin-right: 40px;
+            }
+            .manual-btn:hover{
+                background-color: white;
+            }
+            #radio1:checked ~ .first{
+                margin-left: 0;
+            }
+            #radio2:checked ~ .first{
+                margin-left: -50%;
+            }
+                #radio3:checked ~ .first{
+                margin-left: -100%;
+            }
+                #radio4:checked ~ .first{
+                margin-left: -150%;
+            }
+                #radio5:checked ~ .first{
+                margin-left: -200%;
+            }
+                #radio6:checked ~ .first{
+                margin-left: -250%;
+            }
+            /* css for automatic slide */
+            .navigation-auto{
+                position: absolute;
+                display: flex;
+                width: 800px;
+                justify-content: center;
+                margin-top: 412px;
+                margin-left: 51px;
+
+            }
+            .navigation-auto  div{
+                border: 2px solid black;
+                padding: 5px;
+                border-radius: 10px;
+                transition: 1s;
+            }
+            .navigation-auto div:not(:last-child){
+                margin-right: 40px;
+            }
+            #radio1 :checked ~ .navigation-auto .auto-btn1{
+                background-color: white;
+            }
+            #radio2 :checked ~ .navigation-auto .auto-btn2{
+                background-color: white;
+            }
+            #radio3 :checked ~ .navigation-auto .auto-btn3{
+                background: white;
+            }
+            #radio4 :checked ~ .navigation-auto .auto-btn4{
+                background: white;
+            }
+            #radio5 :checked ~ .navigation-auto .auto-btn5{
+                background: white;
+            }
+            #radio6 :checked ~ .navigation-auto .auto-btn6{
+                background:white;
+            }
+    </style>
+</head>
+    <nav class="navbar">
+    <ul style="margin: auto;padding-left: 355px;padding-top: 47px;" >
+        <li style="padding-right: 40px;"><a href="home.html" style="padding: 4px;">Home</a> </li>
+        <li style="padding-right: 40px;"><a href="aboutus.html" style="padding: 4px;">About Us</a></li>
+        <li style="padding-right:40px;"><a href="custom.html"style="padding: 4px;">Custom</a></li>
+        <div class="search" style="display: flex; width: 300px;margin-right: 349px;height: 26px;padding-top: 10px;">
+            <form action="">
+            <input type="text" name="search" id="search" placeholder="Search here" style="width: 250px; text-align: center;padding-bottom:12px ;" >
+            <button type="submit" class="button" style="margin-left: 0px; width: 30px; height: 25px;"><img src="search.png" alt="" style="width:14px; height: 17px;"></button>
+        </form>
+
+        </div>
+    </ul>
+    </nav>
+    <h1 align="center" style="color: rgb(22, 6, 6);margin-top: 150px;font-family: 'Lobster', cursive;">EVENT'S ORGANISED BY US</h1>
+    <!-- image silder start -->
+    <div class="slider">
+        <div class="slides">
+            <!-- radio button start -->
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+            <input type="radio" name="radio-btn" id="radio5">
+            <input type="radio" name="radio-btn" id="radio6">
+            <!-- radio button end -->
+            <!-- slide image start -->
+            <div class="slide first">
+            <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+        </div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1604668915840-580c30026e5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1348&q=80" alt="">
+            </div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1625038032515-308ab14d10b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+            </div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1587271636175-90d58cdad458?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+            </div>
+            <div class="slide"><img src="https://i.pinimg.com/originals/1d/87/d7/1d87d74e68098e8cd591e55928a3c16b.jpg" alt="">
+            </div>
+            <div class="slide"><img src="https://www.thirtyhandmadedays.com/wp-content/uploads/2013/09/50th-anniversary-party-2.jpg" alt="">
+            </div>
+            <!-- slide image end -->
+            <!-- automatic slides start -->
+            <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+                <div class="auto-btn5"></div>
+                <div class="auto-btn6"></div>
+            </div>
+            <!-- manual slide -->
+            <div class="navigation-manual">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+                <label for="radio4" class="manual-btn"></label>
+                <label for="radio5" class="manual-btn"></label>
+                <label for="radio6" class="manual-btn"></label>
+            </div>
+            <!-- manual slide end -->
+            <!-- automatic slides end-->
+
+        </div>
+    </div>
+    <!-- image slider end -->
+    <script type="text/javascript">
+        var counter=1;
+        setInterval(function(){
+            document.getElementById('radio' + counter).checked = true;
+            counter++;
+            if(counter>6){
+                counter = 1;
+            }
+        },3800)
+    </script>
+
+    <nav class="event">
+    <div  class="ani" id="ani" style="margin-left: 150px; margin-top: 100px;">
+    <a href="/formbirthday.html" > <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1262&q=80" alt="" width="292px" height="292px" style="margin-right: 153px;"  ></a>
+    <a href="haldi.html" > <img src="https://images.unsplash.com/photo-1601121868898-4581104b29de?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="" width="292px" height="292px" style="margin-right: 153px;"></a>
+    <a href="anniversary.html" > <img src="https://images.unsplash.com/photo-1573157941034-ba27a5097323?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="" width="292px" height="292px"></a>
+    </div>
+    </nav>
+    <div style="display: flex;padding-left: 195px;padding-right: 100px;" class="first" >
+        <p >BIRTHDAY PARTY</p>
+        <p style="padding-left: 225px;">HALDI CEREMONY</p>
+        <p style="padding-left: 187px;">ANNIVERSARY PARTY</p>
+
+    </div>
+</nav>
+<nav class="event">
+<div class="ani" style="margin-left: 150px; margin-top: 100px;">
+<a href="reception.html" > <img src="https://weddingdream.net/images/blog/Blog_5/armenian_hall_wedding_decor_cambridge_ontario.jpg" alt="" width="292px" height="292px" style="margin-right: 153px;"  ></a>
+<a href="concert.html" > <img src="https://images.unsplash.com/photo-1563841930606-67e2bce48b78?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=436&q=80" alt="" width="292px" height="292px" style="margin-right: 153px;"></a>
+<a href="school.html" > <img src="http://photonshouse.com/photo/12/12fe1ad55702948b744ce11a3e4d93c1.jpg" alt="" width="292px" height="292px"></a>
+</div>
+</nav>
+<div style="display: flex;padding-left: 218px;padding-right: 100px;" class="first">
+    <p >RECEPTION</p>
+    <p style="padding-left: 325px;">CONCERT</p>
+    <p style="padding-left: 256px;">SCHOOL FUNCTIONS</p>
+</div>
+</header>
+
+
+
+
+
+
+</body>
